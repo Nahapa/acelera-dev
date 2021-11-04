@@ -9,6 +9,11 @@ $apis = [
     'https://random-data-api.com/api/subscription/random_subscription'
 ];
 
+$arquivo = fopen('api.txt', 'w+');
+fclose($arquivo);
+
+$results = [];
+
 foreach ($apis as $api) {
     $arquivo = fopen('api.txt', 'a+');
     $result = file_get_contents($api);
@@ -16,3 +21,13 @@ foreach ($apis as $api) {
     fwrite($arquivo, PHP_EOL);
     fclose($arquivo);
 }
+
+$arquivo = fopen('api.txt', 'r');
+while (true) {
+    $linha = fgets($arquivo);
+    if ($linha == null) break;
+    $results[] = json_decode($linha, true);
+}
+fclose($arquivo);
+
+var_export($results);
