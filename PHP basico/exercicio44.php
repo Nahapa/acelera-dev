@@ -1,5 +1,10 @@
 <?php
 
+$caminho = 'exercicio44';
+if (!is_dir($caminho)) {
+    mkdir($caminho);
+}
+
 $ceps = [];
 
 function curl($url)
@@ -41,6 +46,6 @@ $ceps[] = curl('https://viacep.com.br/ws/30670190/json/');
 
 $ceps = json_encode($ceps);
 
-$arquivo = fopen('ceps.txt', 'w+');
+$arquivo = fopen("{$caminho}/ceps.txt", 'w+');
 fwrite($arquivo, $ceps);
 fclose($arquivo);

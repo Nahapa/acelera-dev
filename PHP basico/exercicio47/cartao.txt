@@ -1,0 +1,8 @@
+Array
+(
+    [id] => 96
+    [uid] => 7502d20c-86a8-48c3-b934-24eed3f93bb2
+    [credit_card_number] => 1228-1221-1221-1431
+    [credit_card_expiry_date] => 2025-11-16
+    [credit_card_type] => american_express
+)

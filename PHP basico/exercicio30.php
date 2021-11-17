@@ -1,6 +1,6 @@
 <?php
 
-require_once('./funcoes.php');
+require_once('./exercicio30/funcoes.php');
 
 echo soma(1, 2);
 echo '<br />';

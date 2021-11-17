@@ -1,6 +1,0 @@
-{"id":579,"uid":"6111434e-7c9c-4b54-87a2-30da822f2695","valid_card":"6011111111111117","token":"tok_amex","invalid_card":"4000000000000028","month":"02","year":"2023","ccv":"229","ccv_amex":"1308"}
-{"id":5630,"uid":"26c0244c-4320-428a-b11a-2b9028107ce0","app_name":"Veribet","app_version":"4.8.4","app_author":"Kelly Beatty IV","app_semantic_version":"6.2.2","app_major_version":"65.1.7","app_minor_version":"6.187.9","app_patch_version":"1.7.2"}
-{"id":9039,"uid":"d0a168dd-8a24-411e-8727-dce23c27d7fc","brand":"Heineken","name":"Dreadnaught IPA","style":"Stout","hop":"Sterling","yeast":"1728 - Scottish Ale","malts":"Caramel","ibu":"62 IBU","alcohol":"3.1%","blg":"14.6°Blg"}
-{"id":7742,"uid":"f12e1614-f740-45d5-b0a9-50802ed4690d","color":"green","department":"Jewelry","material":"Plastic","product_name":"Incredible Leather Watch","price":40.0,"price_string":"3.11","promo_code":"SweetSale253864"}
-{"id":5693,"uid":"e7b1e9aa-16c0-4443-a11c-91d62eba071c","build_number":257,"manufacturer":"Huawei","model":"iPhone X","platform":"Windows Phone","serial_number":"_usDGH^%'4dSYvUtH39qu3*hbi3V+z","version":286}
-{"id":9233,"uid":"dcc345d3-ea67-47c4-8e2d-1e84abef69e8","plan":"Essential","status":"Pending","payment_method":"Bitcoins","subscription_term":"Quinquennal","payment_term":"Monthly"}

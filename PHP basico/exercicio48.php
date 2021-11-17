@@ -1,5 +1,10 @@
 <?php
 
+$caminho = 'exercicio48';
+if (!is_dir($caminho)) {
+    mkdir($caminho);
+}
+
 $apis = [
     'https://random-data-api.com/api/stripe/random_stripe',
     'https://random-data-api.com/api/app/random_app',
@@ -9,20 +14,20 @@ $apis = [
     'https://random-data-api.com/api/subscription/random_subscription'
 ];
 
-$arquivo = fopen('api.txt', 'w+');
+$arquivo = fopen("{$caminho}/api.txt", 'w+');
 fclose($arquivo);
 
 $results = [];
 
 foreach ($apis as $api) {
-    $arquivo = fopen('api.txt', 'a+');
+    $arquivo = fopen("{$caminho}/api.txt", 'a+');
     $result = file_get_contents($api);
     fwrite($arquivo, $result);
     fwrite($arquivo, PHP_EOL);
     fclose($arquivo);
 }
 
-$arquivo = fopen('api.txt', 'r');
+$arquivo = fopen("{$caminho}/api.txt", 'r');
 while (true) {
     $linha = fgets($arquivo);
     if ($linha == null) break;

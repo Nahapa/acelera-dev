@@ -1,8 +1,0 @@
-Array
-(
-    [id] => 1631
-    [uid] => 61575884-fedb-458c-9ed1-64392b5c397e
-    [credit_card_number] => 1211-1221-1234-2201
-    [credit_card_expiry_date] => 2025-11-03
-    [credit_card_type] => visa
-)
