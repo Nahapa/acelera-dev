@@ -10,6 +10,24 @@ class Aluno
     private int $idade;
     private int $nivelEscolar;
 
+    public function __construct(
+        string $matricula,
+        string $nome,
+        string $sobrenome,
+        string $cpf,
+        string $rg,
+        int $idade,
+        int $nivelEscolar
+    ) {
+        $this->matricula = $matricula;
+        $this->nome = $nome;
+        $this->sobrenome = $sobrenome;
+        $this->cpf = $cpf;
+        $this->rg = $rg;
+        $this->idade = $idade;
+        $this->nivelEscolar = $nivelEscolar;
+    }
+
     public function realizaMatricula()
     {
     }
@@ -27,7 +45,7 @@ class Turma
 {
     protected int $ano;
     protected string $nomeTurma;
-    protected array $alunos;
+    protected Aluno $alunos;
     protected int $capacidade;
 
     public function listarAlunos()

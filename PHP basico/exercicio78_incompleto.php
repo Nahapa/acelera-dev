@@ -73,9 +73,9 @@ class Emprestimo
     private bool $status;
 }
 
-class reservar
+class reserva
 {
-    private $usaurio;
+    private $usuario;
     private $livro;
     private $status;
 }
