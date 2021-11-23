@@ -37,3 +37,31 @@ class DespesaDia extends DespesaMes
         return $this->dia;
     }
 }
+
+class Despesas
+{
+    private string $cpf;
+    private array $despesaDias;
+    private array $despesaMeses;
+
+    public function __construct(string $cpf, array $despesaDias, array $despesaMeses)
+    {
+        $this->cpf = $cpf;
+        $this->despesaDias = $despesaDias;
+        $this->despesaMeses = $despesaMeses;
+    }
+
+    public function getCPF(): string
+    {
+        return $this->cpf;
+    }
+
+    public function totalizaMes(int $mes): DespesaMes
+    {
+        foreach ($this->despesaMeses as $despesaMes) {
+            if ($mes === $despesaMes->getMes()) {
+                return $despesaMes;
+            }
+        }
+    }
+}
