@@ -1,7 +1,5 @@
 <?php
 
-namespace References;
-
 class Biblioteca
 {
     private $listaUsuarios;
