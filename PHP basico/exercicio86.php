@@ -1,8 +1,18 @@
 <?php
 
+//
+
+interface CompressFile
+{
+}
+
 class File
 {
     private int $size;
+
+    public function zip()
+    {
+    }
 }
 
 class Image
