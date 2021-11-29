@@ -47,10 +47,13 @@ $n2 = [
     'Joao'      => random_int(0, 15)
 ];
 
+$arquivo = fopen('exercicio53/aluno-aprovados.txt', 'w+');
+
 foreach ($n1 as $nome => $nota1) {
     $resultado = passou($nota1, $n2[$nome]);
 
     if ($resultado) {
-        fopen('teste', 'w+');
+        fwrite($arquivo, $nome . PHP_EOL);
     }
 }
+fclose($arquivo);
