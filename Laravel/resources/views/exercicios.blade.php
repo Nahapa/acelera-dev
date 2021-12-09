@@ -10,7 +10,10 @@
 
 <body>
     <a href="{{ route('perfil') }}">exercicio99</a><br />
-    <a href="{{ route('documentos') }}">exercicio100</a><br />
+    <a href="{{ route('listagemdoc') }}">exercicio100</a><br />
+    <a href="{{ route('listagemdoc') }}">exercicio101</a><br />
+    <a href="{{ route('listagemdoc') }}">exercicio102</a><br />
+    <a href="{{ route('listagemass') }}">exercicio103</a><br />
 </body>
 
 </html>
