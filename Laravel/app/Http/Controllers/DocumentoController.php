@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Log;
 
 class DocumentoController extends Controller
 {
-    public function listagem()
+    public function listagemdoc()
     {
         $documentos = Documento::all();
         Log::channel('documentos')->info('Documentos consultados com sucesso');
