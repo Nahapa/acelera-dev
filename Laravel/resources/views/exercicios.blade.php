@@ -18,6 +18,8 @@
     <a href="{{ route('novodoc') }}">exercicio105</a><br />
     <a href="{{ route('listagemdoc') }}">exercicio106</a><br />
     <a href="{{ route('novoass') }}">exercicio107</a><br />
+    <a href="{{ route('novoass') }}">exercicio108</a><br />
+    <a href="{{ route('listagemass') }}">exercicio109</a><br />
 </body>
 
 </html>
