@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <a href="{{ route('novodoc') }}">Novo</a>
+    <hr />
+    @if (Session::has('success'))
+        <div>## {{ Session::get('success') }} ##</div>
+        <hr>
+    @endif
     @foreach ($documentos as $documento)
         <span>Titulo: {{ $documento->titulo }}</span> <br />
         <span>Tamanho do documento em MB: {{ $documento->tamanho_mb }}</span> <br />

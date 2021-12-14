@@ -16,7 +16,7 @@ class CreateAssinaturasTable extends Migration
         Schema::create('assinaturas', function (Blueprint $table) {
             $table->id();
             $table->integer('quantidade_caracteres');
-            $table->boolean('padrao');
+            $table->string('padrao', 200);
             $table->integer('numero_vezes_usada');
             $table->timestamps();
         });

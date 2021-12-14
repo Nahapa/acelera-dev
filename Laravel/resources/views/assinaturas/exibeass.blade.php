@@ -12,6 +12,12 @@
     <span>Qnt de caracteres da assinatura: {{ $assinatura->quantidade_caracteres }}</a> </span> <br />
     <span>Assinatura padrão: {{ $assinatura->padrao }} </span> <br />
     <span>Nº vezes que essa assinatura foi usada: {{ $assinatura->numero_vezes_usada }} </span> <br />
+    <form action="{{ route('removeass', $assinatura->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Remover</button>
+    </form>
+    <hr>
     <span><a href="{{ route('listagemass') }}">Voltar</a></span> <br />
 </body>
 

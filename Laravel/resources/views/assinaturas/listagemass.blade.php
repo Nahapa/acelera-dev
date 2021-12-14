@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <a href="{{ route('novoass') }}">Novo</a>
+    <hr />
+    @if (Session::has('success'))
+        <div>## {{ Session::get('success') }} ##</div>
+        <hr>
+    @endif
     @foreach ($assinaturas as $assinatura)
         <span>Qnt de caracteres da assinatura: {{ $assinatura->quantidade_caracteres }}</a> </span> <br />
         <span>Assinatura padrão: {{ $assinatura->padrao }} </span> <br />

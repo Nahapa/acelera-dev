@@ -14,6 +14,12 @@
     <span>Nº de assinaturas do documento: {{ $documento->numero_assinaturas }} </span> <br />
     <span>Assinatura do responsável: {{ $documento->assinatura_responsavel }} </span> <br />
     <span>Quantidade de páginas (1 ou 10): {{ $documento->quantidade_paginas }} </span> <br />
+    <form action="{{ route('removedoc', $documento->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Remover</button>
+    </form>
+    <hr>
     <span><a href="{{ route('listagemdoc') }}">Voltar</a></span> <br />
 </body>
 

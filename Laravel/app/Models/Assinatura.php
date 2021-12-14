@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Assinatura extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['quantidade_caracteres', 'padrao', 'numero_vezes_usada'];
 }

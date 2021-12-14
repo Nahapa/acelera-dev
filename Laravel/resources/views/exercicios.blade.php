@@ -14,6 +14,10 @@
     <a href="{{ route('listagemdoc') }}">exercicio101</a><br />
     <a href="{{ route('listagemdoc') }}">exercicio102</a><br />
     <a href="{{ route('listagemass') }}">exercicio103</a><br />
+    <a href="{{ route('novodoc') }}">exercicio104</a><br />
+    <a href="{{ route('novodoc') }}">exercicio105</a><br />
+    <a href="{{ route('listagemdoc') }}">exercicio106</a><br />
+    <a href="{{ route('novoass') }}">exercicio107</a><br />
 </body>
 
 </html>
