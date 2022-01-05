@@ -9,17 +9,14 @@
 </head>
 
 <body>
-    <a href="{{ route('perfil') }}">exercicio99</a><br />
-    <a href="{{ route('listagemdoc') }}">exercicio100</a><br />
-    <a href="{{ route('listagemdoc') }}">exercicio101</a><br />
-    <a href="{{ route('listagemdoc') }}">exercicio102</a><br />
-    <a href="{{ route('listagemass') }}">exercicio103</a><br />
-    <a href="{{ route('novodoc') }}">exercicio104</a><br />
-    <a href="{{ route('novodoc') }}">exercicio105</a><br />
-    <a href="{{ route('listagemdoc') }}">exercicio106</a><br />
-    <a href="{{ route('novoass') }}">exercicio107</a><br />
-    <a href="{{ route('novoass') }}">exercicio108</a><br />
-    <a href="{{ route('listagemass') }}">exercicio109</a><br />
+    @if (session('error'))
+        <p style="color: red;">{{ session('error')}}</p>
+    @endif
+    <a href="{{ route('perfil') }}">Perfil</a><br />
+    <a href="{{ route('listagemdoc') }}">Documentos</a><br />
+    <a href="{{ route('listagemass') }}">Assinaturas</a><br />
+    <a href="{{ route('login') }}">Login</a><br />
+    <a href="{{ route('logout') }}">Logout</a><br />
 </body>
 
 </html>

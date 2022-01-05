@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AssinaturaController;
+use App\Http\Controllers\AutenticacaoController;
 use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\PerfilController;
 use Illuminate\Support\Facades\Route;
@@ -12,7 +13,7 @@ Route::get('perfil', [PerfilController::class, 'perfil'])->name('perfil');
 Route::get('documentos', [DocumentoController::class, 'listagemdoc'])->name('listagemdoc');
 Route::post('documentos', [DocumentoController::class, 'inseredoc'])->name('inseredoc');
 Route::get('documentos/novo', [DocumentoController::class, 'novodoc'])->name('novodoc');
-Route::delete('documentos/remover/{id}', [DocumentoController::class, 'removedoc'])->name('removedoc');
+Route::delete('documentos/remover/{id}', [DocumentoController::class, 'removedoc'])->name('removedoc')->middleware('validapermissao');
 Route::get('documentos/{id}', [DocumentoController::class, 'exibedoc'])->name('exibedoc');
 
 Route::get('assinaturas', [AssinaturaController::class, 'listagemass'])->name('listagemass');
@@ -20,3 +21,6 @@ Route::post('assinaturas', [AssinaturaController::class, 'insereass'])->name('in
 Route::get('assinaturas/novo', [AssinaturaController::class, 'novoass'])->name('novoass');
 Route::delete('assinaturas/remover/{id}', [AssinaturaController::class, 'removeass'])->name('removeass');
 Route::get('assinaturas/{id}', [AssinaturaController::class, 'exibeass'])->name('exibeass');
+
+Route::get('login', [AutenticacaoController::class, 'login'])->name('login');
+Route::get('logout', [AutenticacaoController::class, 'logout'])->name('logout');
