@@ -1,0 +1,10 @@
+{
+    "require": {
+        "lcobucci/jwt": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "JWT\\": "Classes/"
+        }
+    }
+}
