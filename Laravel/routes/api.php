@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\DocumentoControllerApi;
+use App\Http\Controllers\Api\LoginControllerApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::group(
+    [
+        'as' => 'api.'
+    ],
+    function () {
+        Route::post('/login', [LoginControllerApi::class, 'login'])->name('login');
+        Route::get('/logout', [LoginControllerApi::class, 'logout'])->name('logout');
+        Route::get('/refresh', [LoginControllerApi::class, 'refresh'])->name('refresh');
 
-Route::get('documentos', [DocumentoControllerApi::class, 'listagemdoc']);
-Route::get('documentos/{id}', [DocumentoControllerApi::class, 'exibedoc']);
+        Route::middleware('jwt.auth')->group(
+            function () {
+                Route::get('documentos', [DocumentoControllerApi::class, 'listagemdoc']);
+                Route::get('documentos/{id}', [DocumentoControllerApi::class, 'exibedoc']);
+            }
+        );
+    }
+);
