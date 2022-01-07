@@ -19,4 +19,16 @@ class Pessoa
     {
         $this->token = $token;
     }
+
+    public function __toString()
+    {
+        return json_encode([
+            'id' => $this->id,
+            'nome' => $this->nome,
+            'email' => $this->email,
+            'profissao' => $this->profissao,
+            'escolaridade' => $this->escolaridade,
+            'token' => $this->token
+        ]);
+    }
 }

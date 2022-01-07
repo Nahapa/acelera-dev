@@ -47,11 +47,8 @@ $pessoas = [
 
 foreach ($pessoas as $pessoa) {
     $configuration = Configuration::forSymmetricSigner(
-        // You may use any HMAC variations (256, 384, and 512)
         new Sha256(),
-        // replace the value below with a key of your own!
         InMemory::plainText('Ajhdkajsg665612AAA8]0')
-        // You may also override the JOSE encoder/decoder if needed by providing extra arguments here
     );
 
     $time = new DateTimeImmutable();
@@ -72,6 +69,6 @@ foreach ($pessoas as $pessoa) {
 
     $pessoa->setToken($token->toString());
 
-    echo $pessoa->token;
+    echo $pessoa;
     echo '<hr />';
 }
