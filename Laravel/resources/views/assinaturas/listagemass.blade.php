@@ -17,9 +17,9 @@
         <hr>
     @endif
     @foreach ($assinaturas as $assinatura)
-        <span>Qnt de caracteres da assinatura: {{ $assinatura->quantidade_caracteres }}</a> </span> <br />
-        <span>Assinatura padrão: {{ $assinatura->padrao }} </span> <br />
-        <span>Nº vezes que essa assinatura foi usada: {{ $assinatura->numero_vezes_usada }} </span> <br />
+        <span>Qnt de caracteres da assinatura: {{ $assinatura->qnt_caracteres }}</a> </span> <br />
+        <span>Assinatura padrão: {{ $assinatura->assinatura_default }} </span> <br />
+        <span>Nº vezes que essa assinatura foi usada: {{ $assinatura->qnt_de_uso }} </span> <br />
         <span><a href="{{ route('exibeass', $assinatura->id) }}">Exibir</a></span> <br />
         <hr />
     @endforeach

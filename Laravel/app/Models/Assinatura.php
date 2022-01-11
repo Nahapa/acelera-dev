@@ -11,5 +11,5 @@ class Assinatura extends Model
 
     protected $connection = 'pgsql';
 
-    protected $fillable = ['quantidade_caracteres', 'padrao', 'numero_vezes_usada'];
+    protected $fillable = ['qnt_caracteres', 'assinatura_default', 'qnt_de_uso'];
 }

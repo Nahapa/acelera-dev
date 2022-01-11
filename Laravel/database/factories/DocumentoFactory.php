@@ -15,10 +15,9 @@ class DocumentoFactory extends Factory
     {
         return [
             'titulo'                    => $this->faker->name(),
-            'tamanho_mb'                => $this->faker->randomNumber(),
-            'numero_assinaturas'        => $this->faker->randomNumber(),
+            'tamanho'                   => $this->faker->randomNumber(),
             'assinatura_responsavel'    => $this->faker->name(),
-            'quantidade_paginas'        => $this->faker->randomNumber()
+            'qnt_pages'                 => $this->faker->randomNumber()
         ];
     }
 }

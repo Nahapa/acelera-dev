@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\AnaliseControllerApi;
+use App\Http\Controllers\Api\AssinaturaControllerApi;
 use App\Http\Controllers\Api\DocumentoControllerApi;
 use App\Http\Controllers\Api\LoginControllerApi;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\RelatorioDeAnaliseControllerApi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,8 +29,10 @@ Route::group(
 
         Route::middleware('jwt.auth')->group(
             function () {
-                Route::get('documentos', [DocumentoControllerApi::class, 'listagemdoc']);
-                Route::get('documentos/{id}', [DocumentoControllerApi::class, 'exibedoc']);
+                Route::apiResource('/documentos', DocumentoControllerApi::class);
+                Route::apiResource('/assinaturas', AssinaturaControllerApi::class);
+                Route::apiResource('/analises', AnaliseControllerApi::class);
+                Route::apiResource('/relatorios', RelatorioDeAnaliseControllerApi::class);
             }
         );
     }

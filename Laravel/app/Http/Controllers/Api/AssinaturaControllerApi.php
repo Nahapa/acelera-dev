@@ -3,83 +3,83 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Documento;
+use App\Models\Assinatura;
 use Illuminate\Http\Request;
 
-class DocumentoControllerApi extends Controller
+class AssinaturaControllerApi extends Controller
 {
     private $model;
 
-    public function __construct(Documento $model)
+    public function __construct(Assinatura $model)
     {
         $this->model = $model;
     }
 
     public function index()
     {
-        $documento = Documento::paginate(10);
+        $assinaturas = Assinatura::paginate(10);
 
-        return response()->json($documento);
+        return response()->json($assinaturas);
     }
 
     public function store(Request $request)
     {
-        Documento::create($request->all());
+        Assinatura::create($request->all());
 
         return response()->json([
-            'msg' => 'Documento criado com sucesso',
+            'msg' => 'Assinatura criada com sucesso!!',
             'code' => '200'
         ]);
     }
 
     public function show($id)
     {
-        $documento = Documento::find($id);
+        $assinatura = Assinatura::find($id);
 
-        if (!$documento) {
+        if (!$assinatura) {
             return response()->json([
                 'msg' => 'ID não encontrado',
                 'code' => '404'
             ], 404);
         }
 
-        return response()->json($documento);
+        return response()->json($assinatura);
     }
 
     public function update(Request $request, $id)
     {
-        $documento = Documento::find($id);
+        $assinatura = Assinatura::find($id);
 
-        if (!$documento) {
+        if (!$assinatura) {
             return response()->json([
                 'msg' => 'ID não encontrado',
                 'code' => '404'
             ], 404);
         }
 
-        $documento->update($request->all());
+        $assinatura->update($request->all());
 
         return response()->json([
-            'msg' => 'Documento alterado com sucesso!!',
+            'msg' => 'Assinatura alterada com sucesso!!',
             'code' => '200'
         ]);
     }
 
     public function destroy($id)
     {
-        $documento = Documento::find($id);
+        $assinatura = Assinatura::find($id);
 
-        if (!$documento) {
+        if (!$assinatura) {
             return response()->json([
                 'msg' => 'ID não encontrado',
                 'code' => '404'
             ], 404);
         }
 
-        $documento->delete();
+        $assinatura->delete();
 
         return response()->json([
-            'msg' => 'Documento deletado com sucesso!!',
+            'msg' => 'Assinatura deletada com sucesso!!',
             'code' => '200'
         ]);
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDocumentosTable extends Migration
+class CreateAnalisesTable extends Migration
 {
     /**
      * The database connection that should be used by the migration.
@@ -20,12 +20,13 @@ class CreateDocumentosTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql')->create('documentos', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('analises', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo', 45);
-            $table->integer('tamanho');
-            $table->string('assinatura_responsavel', 45);
-            $table->integer('qnt_pages');
+            $table->integer('id_doc');
+            $table->integer('id_assinatura');
+            $table->string('status', 45);
+            $table->dateTime('data_analise');
+            $table->integer('visualizadores');
             $table->timestamps();
         });
     }
@@ -37,6 +38,6 @@ class CreateDocumentosTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql')->dropIfExists('documentos');
+        Schema::connection('pgsql')->dropIfExists('analises');
     }
 }

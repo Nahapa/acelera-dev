@@ -18,13 +18,13 @@
     <form action="{{ route('insereass') }}" method="POST">
         @csrf
         <span>Qnt de caracteres da assinatura</span>
-        <input name="quantidade_caracteres" value="{{ old('quantidade_caracteres') }}" />
+        <input name="qnt_caracteres" value="{{ old('qnt_caracteres') }}" />
         <br>
         <span>Assinatura padrão</span>
-        <input name="padrao" value="{{ old('padrao') }}" />
+        <input name="assinatura_default" value="{{ old('assinatura_default') }}" />
         <br>
         <span>Nº vezes que essa assinatura</span>
-        <input name="numero_vezes_usada" value="{{ old('numero_vezes_usada') }}" />
+        <input name="qnt_de_uso" value="{{ old('qnt_de_uso') }}" />
         <br>
         <button type="submit">Inserir</button>
     </form>

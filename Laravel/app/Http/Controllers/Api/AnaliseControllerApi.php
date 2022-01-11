@@ -3,83 +3,83 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Documento;
+use App\Models\Analise;
 use Illuminate\Http\Request;
 
-class DocumentoControllerApi extends Controller
+class AnaliseControllerApi extends Controller
 {
     private $model;
 
-    public function __construct(Documento $model)
+    public function __construct(Analise $model)
     {
         $this->model = $model;
     }
 
     public function index()
     {
-        $documento = Documento::paginate(10);
+        $analises = Analise::paginate(10);
 
-        return response()->json($documento);
+        return response()->json($analises);
     }
 
     public function store(Request $request)
     {
-        Documento::create($request->all());
+        Analise::create($request->all());
 
         return response()->json([
-            'msg' => 'Documento criado com sucesso',
+            'msg' => 'Analise criada com sucesso!!',
             'code' => '200'
         ]);
     }
 
     public function show($id)
     {
-        $documento = Documento::find($id);
+        $analise = Analise::find($id);
 
-        if (!$documento) {
+        if (!$analise) {
             return response()->json([
                 'msg' => 'ID não encontrado',
                 'code' => '404'
             ], 404);
         }
 
-        return response()->json($documento);
+        return response()->json($analise);
     }
 
     public function update(Request $request, $id)
     {
-        $documento = Documento::find($id);
+        $analise = Analise::find($id);
 
-        if (!$documento) {
+        if (!$analise) {
             return response()->json([
                 'msg' => 'ID não encontrado',
                 'code' => '404'
             ], 404);
         }
 
-        $documento->update($request->all());
+        $analise->update($request->all());
 
         return response()->json([
-            'msg' => 'Documento alterado com sucesso!!',
+            'msg' => 'Analise alterada com sucesso!!',
             'code' => '200'
         ]);
     }
 
     public function destroy($id)
     {
-        $documento = Documento::find($id);
+        $analise = Analise::find($id);
 
-        if (!$documento) {
+        if (!$analise) {
             return response()->json([
                 'msg' => 'ID não encontrado',
                 'code' => '404'
             ], 404);
         }
 
-        $documento->delete();
+        $analise->delete();
 
         return response()->json([
-            'msg' => 'Documento deletado com sucesso!!',
+            'msg' => 'Analise deletada com sucesso!!',
             'code' => '200'
         ]);
     }

@@ -10,10 +10,9 @@
 
 <body>
     <span>Titulo: {{ $documento->titulo }}</a> </span> <br />
-    <span>Tamanho do documento em MB: {{ $documento->tamanho_mb }} </span> <br />
-    <span>Nº de assinaturas do documento: {{ $documento->numero_assinaturas }} </span> <br />
+    <span>Tamanho do documento em MB: {{ $documento->tamanho }} </span> <br />
     <span>Assinatura do responsável: {{ $documento->assinatura_responsavel }} </span> <br />
-    <span>Quantidade de páginas (1 ou 10): {{ $documento->quantidade_paginas }} </span> <br />
+    <span>Quantidade de páginas (1 ou 10): {{ $documento->qnt_pages }} </span> <br />
     <form action="{{ route('removedoc', $documento->id) }}" method="POST">
         @csrf
         @method('DELETE')

@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Documento extends Model
+class Analise extends Model
 {
     use HasFactory;
 
     protected $connection = 'pgsql';
 
     protected $fillable = [
-        'titulo',
-        'tamanho',
-        'assinatura_responsavel',
-        'qnt_pages'
+        'id_doc',
+        'id_assinatura',
+        'status',
+        'data_analise',
+        'visualizadores'
     ];
 }

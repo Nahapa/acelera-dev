@@ -21,16 +21,13 @@
         <input name="titulo" value="{{ old('titulo') }}" />
         <br>
         <span>Tamanho do documento em MB</span>
-        <input name="tamanho_mb" value="{{ old('tamanho_mb') }}" />
-        <br>
-        <span>Nº de assinaturas do documento</span>
-        <input name="numero_assinaturas" value="{{ old('numero_assinaturas') }}" />
+        <input name="tamanho" value="{{ old('tamanho') }}" />
         <br>
         <span>Assinatura do responsável</span>
         <input name="assinatura_responsavel" value="{{ old('assinatura_responsavel') }}" />
         <br>
         <span>Quantidade de páginas (1 ou 10)</span>
-        <input name="quantidade_paginas" value="{{ old('quantidade_paginas') }}" />
+        <input name="qnt_pages" value="{{ old('qnt_pages') }}" />
         <br>
         <button type="submit">Inserir</button>
     </form>

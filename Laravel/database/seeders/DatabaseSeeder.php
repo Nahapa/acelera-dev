@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(10)->create();
 
         $this->call([
-            DocumentoSeeder::class
+            DocumentoSeeder::class,
+            AssinaturaSeeder::class,
+            AnaliseSeeder::class
         ]);
     }
 }
