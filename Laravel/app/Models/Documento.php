@@ -9,6 +9,8 @@ class Documento extends Model
 {
     use HasFactory;
 
+    protected $connection = 'pgsql';
+
     protected $fillable = [
         'titulo',
         'tamanho_mb',

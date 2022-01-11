@@ -7,13 +7,20 @@ use Illuminate\Support\Facades\Schema;
 class CreateDocumentosTable extends Migration
 {
     /**
+     * The database connection that should be used by the migration.
+     *
+     * @var string
+     */
+    protected $connection = 'pgsql';
+
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('documentos', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('documentos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
             $table->integer('tamanho_mb');
@@ -31,6 +38,6 @@ class CreateDocumentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documentos');
+        Schema::connection('pgsql')->dropIfExists('documentos');
     }
 }

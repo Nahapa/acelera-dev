@@ -7,13 +7,20 @@ use Illuminate\Support\Facades\Schema;
 class CreateAssinaturasTable extends Migration
 {
     /**
+     * The database connection that should be used by the migration.
+     *
+     * @var string
+     */
+    protected $connection = 'pgsql';
+
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('assinaturas', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('assinaturas', function (Blueprint $table) {
             $table->id();
             $table->integer('quantidade_caracteres');
             $table->string('padrao', 200);
@@ -29,6 +36,6 @@ class CreateAssinaturasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('assinaturas');
+        Schema::connection('pgsql')->dropIfExists('assinaturas');
     }
 }

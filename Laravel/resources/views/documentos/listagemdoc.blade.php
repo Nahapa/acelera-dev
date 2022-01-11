@@ -10,6 +10,7 @@
 
 <body>
     <a href="{{ route('novodoc') }}">Novo</a>
+    <a href="{{ route('exercicios') }}">Voltar</a>
     <hr />
     @if (Session::has('success'))
         <div>## {{ Session::get('success') }} ##</div>
@@ -24,7 +25,6 @@
         <span><a href="{{ route('exibedoc', $documento->id) }}">Exibir</a></span> <br />
         <hr />
     @endforeach
-    <span><a href="{{ route('exercicios') }}">Voltar</a></span> <br />
 </body>
 
 </html>
