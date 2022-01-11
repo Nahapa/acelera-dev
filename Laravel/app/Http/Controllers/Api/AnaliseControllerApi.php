@@ -17,14 +17,14 @@ class AnaliseControllerApi extends Controller
 
     public function index()
     {
-        $analises = Analise::paginate(10);
+        $analises = $this->model->paginate(10);
 
         return response()->json($analises);
     }
 
     public function store(Request $request)
     {
-        Analise::create($request->all());
+        $this->model->create($request->all());
 
         return response()->json([
             'msg' => 'Analise criada com sucesso!!',
@@ -34,7 +34,7 @@ class AnaliseControllerApi extends Controller
 
     public function show($id)
     {
-        $analise = Analise::find($id);
+        $analise = $this->model->find($id);
 
         if (!$analise) {
             return response()->json([
@@ -48,7 +48,7 @@ class AnaliseControllerApi extends Controller
 
     public function update(Request $request, $id)
     {
-        $analise = Analise::find($id);
+        $analise = $this->model->find($id);
 
         if (!$analise) {
             return response()->json([
@@ -67,7 +67,7 @@ class AnaliseControllerApi extends Controller
 
     public function destroy($id)
     {
-        $analise = Analise::find($id);
+        $analise = $this->model->find($id);
 
         if (!$analise) {
             return response()->json([

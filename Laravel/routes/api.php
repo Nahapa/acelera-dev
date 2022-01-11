@@ -32,7 +32,7 @@ Route::group(
                 Route::apiResource('/documentos', DocumentoControllerApi::class);
                 Route::apiResource('/assinaturas', AssinaturaControllerApi::class);
                 Route::apiResource('/analises', AnaliseControllerApi::class);
-                Route::apiResource('/relatorios', RelatorioDeAnaliseControllerApi::class);
+                Route::apiResource('/relatorios', RelatorioDeAnaliseControllerApi::class)->only('index');
             }
         );
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateStoreAssinaturaRequest;
 use App\Models\Assinatura;
 use Illuminate\Http\Request;
 
@@ -17,14 +18,14 @@ class AssinaturaControllerApi extends Controller
 
     public function index()
     {
-        $assinaturas = Assinatura::paginate(10);
+        $assinaturas = $this->model->paginate(10);
 
         return response()->json($assinaturas);
     }
 
-    public function store(Request $request)
+    public function store(UpdateStoreAssinaturaRequest $request)
     {
-        Assinatura::create($request->all());
+        $this->model->create($request->all());
 
         return response()->json([
             'msg' => 'Assinatura criada com sucesso!!',
@@ -34,7 +35,7 @@ class AssinaturaControllerApi extends Controller
 
     public function show($id)
     {
-        $assinatura = Assinatura::find($id);
+        $assinatura = $this->model->find($id);
 
         if (!$assinatura) {
             return response()->json([
@@ -46,9 +47,9 @@ class AssinaturaControllerApi extends Controller
         return response()->json($assinatura);
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateStoreAssinaturaRequest $request, $id)
     {
-        $assinatura = Assinatura::find($id);
+        $assinatura = $this->model->find($id);
 
         if (!$assinatura) {
             return response()->json([
@@ -67,7 +68,7 @@ class AssinaturaControllerApi extends Controller
 
     public function destroy($id)
     {
-        $assinatura = Assinatura::find($id);
+        $assinatura = $this->model->find($id);
 
         if (!$assinatura) {
             return response()->json([

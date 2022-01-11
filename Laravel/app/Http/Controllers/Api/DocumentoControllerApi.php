@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateStoreDocumentoRequest;
 use App\Models\Documento;
 use Illuminate\Http\Request;
 
@@ -17,14 +18,14 @@ class DocumentoControllerApi extends Controller
 
     public function index()
     {
-        $documento = Documento::paginate(10);
+        $documento = $this->model->paginate(10);
 
         return response()->json($documento);
     }
 
-    public function store(Request $request)
+    public function store(UpdateStoreDocumentoRequest $request)
     {
-        Documento::create($request->all());
+        $this->model->create($request->all());
 
         return response()->json([
             'msg' => 'Documento criado com sucesso',
@@ -34,7 +35,7 @@ class DocumentoControllerApi extends Controller
 
     public function show($id)
     {
-        $documento = Documento::find($id);
+        $documento = $this->model->find($id);
 
         if (!$documento) {
             return response()->json([
@@ -46,9 +47,9 @@ class DocumentoControllerApi extends Controller
         return response()->json($documento);
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateStoreDocumentoRequest $request, $id)
     {
-        $documento = Documento::find($id);
+        $documento = $this->model->find($id);
 
         if (!$documento) {
             return response()->json([
@@ -67,7 +68,7 @@ class DocumentoControllerApi extends Controller
 
     public function destroy($id)
     {
-        $documento = Documento::find($id);
+        $documento = $this->model->find($id);
 
         if (!$documento) {
             return response()->json([
